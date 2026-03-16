@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #D4AF37;
+  --gold-light: #E8C85A;
+  --gold-dark: #A8872A;
+  --obsidian: #0B0B0B;
+  --charcoal: #1A1A1A;
+  --charcoal-light: #242424;
+  --ivory: #F5F5F5;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--ivory);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--obsidian); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* Selection */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: var(--ivory);
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Gold text gradient */
+.gold-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #A8872A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #D4AF37 0%, #F0D060 25%, #D4AF37 50%, #A8872A 75%, #D4AF37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Gold divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+/* Perfume card hover */
+.perfume-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.perfume-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Button styles */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #A8872A 100%);
+  color: #0B0B0B;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #E8C85A 0%, #D4AF37 100%);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: #D4AF37;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #D4AF37;
+  transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Section fade-in */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Star rating */
+.star-filled { color: #D4AF37; }
+.star-empty { color: #3A3A3A; }
+
+/* Note pill */
+.note-pill {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #D4AF37;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Hero particle glow */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.6);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Input luxury style */
+.luxury-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: #F5F5F5;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.luxury-input:focus {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+}
+.luxury-input::placeholder { color: rgba(245, 245, 245, 0.35); }
+
+/* Badge */
+.badge-gold {
+  background: rgba(212, 175, 55, 0.15);
+  color: #D4AF37;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+/* Fragrance pyramid */
+.pyramid-top { clip-path: polygon(50% 0%, 100% 100%, 0% 100%); }
+.pyramid-mid { clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); }
+.pyramid-base { clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%); }
+
+/* Page header */
+.page-header {
+  background: linear-gradient(180deg, #0B0B0B 0%, #141414 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Pricing card highlight */
+.pricing-featured {
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(0,0,0,0) 100%);
+}
