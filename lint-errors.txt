@@ -1,0 +1,12 @@
+
+> santialls@0.1.0 lint
+> next lint
+
+
+./app/find-dupe/page.tsx
+148:26  Error: 'Check' is not defined.  react/jsx-no-undef
+
+./components/Footer.tsx
+39:96  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
