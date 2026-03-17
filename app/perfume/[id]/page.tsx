@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, Wind, ShoppingCart, Youtube, ArrowLeft, Check } from "lucide-react";
 import { PERFUMES } from "@/lib/data";
-import { useState } from "react";
-
+import { useState, use } from "react";
 function Stars({ rating }: { rating: number }) {
   return (
     <div className="flex gap-0.5">
@@ -34,9 +33,10 @@ const COMMUNITY_REVIEWS = [
   { author: "Mei L.", avatar: "ML", rating: 5, text: "Worth every penny. I've tried dozens of alternatives but none come close to the original. An icon for a reason.", date: "Oct 2025" },
 ];
 
-export default function PerfumeDetailPage({ params }: { params: { id: string } }) {
+export default function PerfumeDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params);
   const [imgError, setImgError] = useState(false);
-  const perfume = PERFUMES.find((p) => p.id === params.id) ?? PERFUMES[0];
+  const perfume = PERFUMES.find((p) => p.id === resolvedParams.id) ?? PERFUMES[0];
 
   return (
     <div className="min-h-screen pt-20">

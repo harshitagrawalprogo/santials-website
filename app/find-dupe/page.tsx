@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, Sparkles, Scale, ArrowRight, Zap, BadgeCheck } from "lucide-react";
+import { Search, Sparkles, Scale, ArrowRight, Zap, BadgeCheck, Check } from "lucide-react";
 import { PERFUMES } from "@/lib/data";
 
 // Extracted dupe pairings from our rich data

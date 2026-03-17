@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-ivory-muted text-sm leading-relaxed mb-6">
-              The intelligence of luxury fragrance. Discover, compare, and experience the world's most refined scents.
+              The intelligence of luxury fragrance. Discover, compare, and experience the world&apos;s most refined scents.
             </p>
             <div className="flex items-center gap-4">
               {[Instagram, Twitter, Youtube].map((Icon, i) => (
