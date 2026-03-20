@@ -27,7 +27,6 @@ export default function Footer() {
     <footer className="bg-charcoal border-t border-gold/10 mt-24">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Crown size={18} className="text-gold" />
@@ -36,7 +35,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-ivory-muted text-sm leading-relaxed mb-6">
-              The intelligence of luxury fragrance. Discover, compare, and experience the world&apos;s most refined scents.
+              The intelligence of luxury fragrance. Discover, compare, and experience the
+              world&apos;s most refined scents.
             </p>
             <div className="flex items-center gap-4">
               {[Instagram, Twitter, Youtube].map((Icon, i) => (
@@ -50,7 +50,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h4 className="font-cinzel text-xs tracking-[0.2em] uppercase text-gold mb-5">
@@ -75,11 +74,17 @@ export default function Footer() {
         <div className="gold-divider my-10" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory-muted">
-          <p>© 2026 SANTIALLS. All rights reserved.</p>
+          <p>&copy; 2026 SANTIALLS. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-gold transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-gold transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-gold transition-colors">Cookie Policy</Link>
+            <Link href="#" className="hover:text-gold transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:text-gold transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="#" className="hover:text-gold transition-colors">
+              Cookie Policy
+            </Link>
           </div>
           <p className="font-cinzel tracking-widest text-gold/50 text-xs">
             LUXURY FRAGRANCE INTELLIGENCE
