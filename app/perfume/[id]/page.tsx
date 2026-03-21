@@ -63,8 +63,11 @@ const COMMUNITY_REVIEWS = [
   },
 ];
 
-export default function PerfumeDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = use(params);
+type Params = Promise<{ id: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+export default function PerfumeDetailPage(props: { params: Params; searchParams: SearchParams }) {
+  const resolvedParams = use(props.params);
   const [imgError, setImgError] = useState(false);
   const perfume = PERFUMES.find((p) => p.id === resolvedParams.id) ?? PERFUMES[0];
 
